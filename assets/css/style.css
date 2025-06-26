@@ -1,16 +1,14 @@
 /* ----- POPPINS FONT Link ----- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 /* ----- VARIABLES ----- */
 :root {
 	--body-color: rgb(250, 250, 250);
 	--color-white: rgb(255, 255, 255);
-
 	--text-color-second: rgb(68, 68, 68);
 	--text-color-third: rgb(30, 159, 171);
-
 	--first-color: rgb(110, 87, 224);
 	--first-color-hover: rgb(40, 91, 212);
-
 	--second-color: rgb(0, 201, 255);
 	--third-color: rgb(192, 166, 49);
 	--first-shadow-color: rgba(0, 0, 0, 0.1);
@@ -24,12 +22,10 @@
 	font-family: 'Poppins', sans-serif;
 }
 
-/* ----- SMOOTH SCROLL ----- */
 html {
 	scroll-behavior: smooth;
 }
 
-/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
 ::-webkit-scrollbar {
 	width: 10px;
 	border-radius: 25px;
@@ -47,7 +43,6 @@ html {
 ::-webkit-scrollbar-thumb:hover {
 	background: #bbb;
 }
-
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn {
@@ -163,8 +158,8 @@ nav {
 
 a.nav-link:hover {
 	color: #007bff;
-	/* Change to your desired hover color */
-	text-decoration: underline; }
+	text-decoration: underline;
+}
 
 /* ----- WRAPPER DESIGN ----- */
 .wrapper {
@@ -200,7 +195,7 @@ a.nav-link:hover {
 }
 
 .featured-name {
-	font-size: 50px;
+	font-size: clamp(1.8rem, 5vw, 3rem);
 	font-weight: 600;
 	color: var(--text-color-second);
 	margin-block: 20px;
@@ -237,7 +232,7 @@ a.nav-link:hover {
 	gap: 30px;
 }
 
-.social_icons :hover{
+.social_icons :hover {
 	background: rgb(110, 87, 224);
 }
 
@@ -251,6 +246,7 @@ a.nav-link:hover {
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
 }
+
 .icon a {
 	color: black;
 }
@@ -311,10 +307,12 @@ a.nav-link:hover {
 .scroll-btn i {
 	font-size: 20px;
 }
+
 .scroll-btn:hover {
 	background: var(--first-color);
 	color: var(--color-white);
 }
+
 /* ----- MAIN BOX ----- */
 .section {
 	padding-block: 5em;
@@ -332,7 +330,7 @@ a.nav-link:hover {
 	width: 50%;
 }
 
-/* -- ## --- RESUABLE CSS -- ## -- */
+/* -- ## --- REUSABLE CSS -- ## -- */
 .top-header {
 	text-align: center;
 	margin-bottom: 5em;
@@ -602,12 +600,52 @@ footer {
 }
 
 .bottom-footer {
-	font-size: 14px;
-	margin-top: 10px;
+	display: flex;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 10px 20px;
+	justify-content: center;
+	align-items: center;
+	color: #333;
+	font-size: 14px
+}
+
+.bottom-footer p {
+	width: auto;
+	height: auto;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	margin: 0
+}
+
+@media (max-width:768px) {
+	.bottom-footer {
+		flex-direction: column;
+		padding: 10px;
+		text-align: center
+	}
+
+	.bottom-footer p {
+		margin-bottom: 10px;
+		text-align: center
+	}
+}
+.contact-info p a{
+	text-decoration: none;
+}
+.contact-info p a {
+	text-decoration: none;
+}
+
+.contact-info p a:hover {
+	color: black;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 
-/* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
+
+/* ----- MEDIA QUERIES FOR RESPONSIVENESS ----- */
 @media only screen and (max-width: 1024px) {
 	.featured-text {
 		padding: 0;
@@ -620,7 +658,6 @@ footer {
 	}
 }
 
-/* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
 @media only screen and (max-width: 900px) {
 	.nav-button {
 		display: none;
@@ -688,16 +725,13 @@ footer {
 	}
 
 	.row {
-		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		gap: 50px;
 	}
 
 	.col {
-		display: flex;
-		justify-content: center;
 		width: 100%;
+		justify-content: center;
 	}
 
 	.about-info,
@@ -712,10 +746,7 @@ footer {
 	.project-box {
 		width: 80%;
 	}
-
 }
-
-/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
 @media only screen and (max-width: 540px) {
 	.featured-name {
@@ -735,3 +766,83 @@ footer {
 	}
 }
 
+/* NEW: FOR SMALL PHONES BELOW 400px */
+@media only screen and (max-width: 400px) {
+	nav {
+		height: 70px;
+		line-height: 70px;
+		padding-inline: 5vw;
+	}
+
+	.nav-name {
+		font-size: 24px;
+	}
+
+	.nav-link {
+		padding-inline: 10px;
+		margin-inline: 10px;
+		font-size: 14px;
+	}
+
+	.featured-name {
+		font-size: 32px;
+		text-align: center;
+	}
+
+	.featured-text-info {
+		font-size: 14px;
+		text-align: center;
+	}
+
+	.featured-text-card span {
+		font-size: 10px;
+	}
+
+	.featured-text-btn {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.scroll-btn {
+		width: 120px;
+		height: 40px;
+		font-size: 14px;
+	}
+
+	.image,
+	.image img {
+		width: 120px;
+		height: 120px;
+	}
+
+	.project-box {
+		width: 100%;
+	}
+
+	.about-info p {
+		font-size: 14px;
+	}
+
+	footer {
+		padding-block: 30px 40px;
+	}
+
+	.top-footer p {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.middle-footer .footer-menu {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer_menu_list a {
+		margin-block: 10px;
+		font-size: 14px;
+	}
+
+	.form-button .btn {
+		width: 100%;
+	}
+}
